@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, span, p, button, a, div {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 44px;
+}
+
+h3 {
+    font-size: 38px;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h5 {
+    font-size: 26px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+p, span, div {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+button {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    border-radius: 14px;
+    width: 306px;
+    height: 54px;
+    transition: 1s ease;
+}
+
+.btn-primary {
+    background: #DB4E66;
+}
+
+.btn-primary:hover {
+    color: #420000;
+    background: #B0354A;
+}
+
+.btn-primary:disabled {
+    background: #E8B0B9;
+    color: #F7E5E5;
+}
+
+.btn-secondary {
+    background: #F2B236;
+}
+
+.btn-secondary:hover {
+    color: #865800;
+    background: #FBB835;
+}
+
+.btn-secondary:disabled {
+    color: #FBF5EA;
+    background: #FFDD9B;
+}
+
+.btn-alternate {
+
+}
+
+.btn-alternate:hover {
+
+}
+
+@media screen and (max-width: 375px) {
+    h1 {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 26px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    p, span, div {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+.container{
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+header{
+    background: rgb(242,178,54);
+    background: linear-gradient(90deg, rgba(242,178,54,1) 0%, rgba(255,156,26,1) 100%);
+}
