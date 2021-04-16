@@ -8,12 +8,14 @@
 
 body {
     background: #FAFAF9;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, span, p, button, a, div {
     font-family: 'Rubik', sans-serif;
     text-align: center;
     margin: 0;
+    color: #222528;
 }
 
 h1, h2, h3, h4, h5, h6, button {
@@ -60,6 +62,7 @@ button {
     text-transform: uppercase;
     border: 0;
     transition: 1s ease;
+    cursor: pointer;
 }
 
 .btn {
@@ -222,11 +225,6 @@ header {
     height: 100%;
 }
 
-/*.quest {*/
-/*    min-height: 696px;*/
-/*    background: url("img/quest.png") center no-repeat;*/
-/*    background-size: 80% ;*/
-/*}*/
 .quest {
     position: relative;
 }
@@ -266,7 +264,7 @@ header {
 
 }
 
-.quest__text-container > h1, h5 {
+.quest__text-container > h1, .quest__text-container h5 {
     color: #FAFAF9;
     text-align: left;
 }
@@ -301,27 +299,88 @@ header {
     flex-direction: column;
 }
 
-.sales-cards__card__sale {
+.sales-cards__sale {
     display: none;
+    width: 118px;
+    height: 118px;
+    padding: 12px 20px 6px 11px;
+    border-radius: 10px;
+    color: #FAFAF9;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.sales-cards__card{
+
+.sales-cards__sale span:first-child {
+    text-align: right;
+}
+
+.sales-cards__sale span:last-child {
+    text-align: left;
+}
+
+.sales-cards__sale__blue {
+    background: #90C1BF;
+}
+
+.sales-cards__sale__yellow {
+    background: #F2B236;
+}
+
+.sales-cards__sale__red {
+    background: #DB4E66;
+}
+
+.sales-cards__card {
     background: #FFFFFF;
     box-shadow: 0px 4px 9px #D3D3D3;
     border-radius: 14px;
     padding: 1.5em 1.375em;
+}
+
+.sales-cards__card:first-child {
+    margin: 2.2em 0 0;
+}
+
+.sales-cards__card:not(:first-child) {
+    margin: 1em 0 0;
+}
+
+.sales-cards__text {
     text-align: left;
 }
-.sales-cards__card:first-child{
-    margin-top: 2.2em;
-}
-.sales-cards__card:not(:first-child){
-    margin-top: 1em;
-}
-.sales-cards__card h5 {
+
+.sales-cards__text h5 {
     color: #DB4E66;
     margin-bottom: .8em;
+    text-align: left;
 }
-.sales-cards__card span{
+
+.sales-cards__text__h5-desktop {
+    display: none;
+}
+
+.sales__hr{
+    background: #A5AAAF;
+    margin: 4em 0;
+}
+.catalog__header{
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+}
+.catalog__header *{
+    text-align: left;
+}
+.catalog__header__desktop button{
+    display: none;
+}
+.catalog__header__not-desktop {
+    display: flex;
+    flex-direction: column;
+}
+.catalog__header__not-desktop div{
+    margin: .5em 0 3.5em;
+    color: #5B636B;
 }
 @media screen and (min-width: 376px) {
     .logo {
@@ -339,10 +398,17 @@ header {
 
     .section-header {
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 4em;
     }
 
     .section-header button {
         margin-top: 0;
+    }
+
+    .section-header span {
+        margin: 0;
     }
 }
 
@@ -426,8 +492,49 @@ header {
     .quest__icons {
         margin-top: 4.25em;
     }
-    .section-header{
+
+    .section-header {
+        grid-column: 2/-2;
+        padding: 0 20px;
+    }
+
+
+    .sales-header {
+
+    }
+
+    .sales-cards {
+        grid-column: 2/-2;
+    }
+
+    .sales-cards__sale {
+        display: flex;
+    }
+
+    .sales-cards__card {
+        display: flex;
+        padding: 2.25em 2.25em 2.5em 2.25em;
+    }
+
+    .sales-cards__text {
+        margin-left: 1em;
+    }
+    .sales__hr{
+        margin: 6em 0 3.5em;
+    }
+    .catalog__header{
+        grid-column: 2/-2;
+    }
+    .catalog__header__not-desktop{
         flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        margin-top: 3em;
+    }
+    .catalog__header__not-desktop div{
+        display: flex;
+        margin: 0;
     }
 }
 
@@ -509,7 +616,7 @@ header {
         padding: 14em 0 2.5em;
     }
 
-    .quest__text-container > h1, h5 {
+    .quest__text-container h1, .quest__text-container h5 {
         text-align: center;
     }
 
@@ -525,5 +632,56 @@ header {
 
     .quest__desktop {
         display: block;
+    }
+
+    .sales .container:nth-child(2) {
+        max-width: unset;
+    }
+
+    .sales-cards {
+        flex-direction: row;
+        grid-column: 2/span 11;
+        margin-top: 1.2em;
+    }
+
+    .sales-cards__card:first-child, .sales-cards__card:not(:first-child) {
+        margin: 0;
+    }
+
+    .sales-cards__card:not(:first-child) {
+        margin-left: 1em;
+    }
+
+    .sales-cards__card {
+        min-width: 546px;
+        padding: 2.125em 2.8125em 2.125em 2.125em;
+        align-items: center;
+    }
+
+    .sales-cards__text__h5 {
+        display: none;
+    }
+
+    .sales-cards__text__h5-desktop {
+        display: block;
+    }
+    .sales__hr{
+        margin: 5em 0;
+    }
+    .catalog__header__desktop button{
+        display: block;
+    }
+    .catalog__header__not-desktop button{
+        display: none;
+    }
+    .catalog__header__desktop{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding-right: 10px;
+    }
+    .catalog__header__not-desktop{
+        margin-top: 2em;
+        padding: 0;
     }
 }
